@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Inbox{% endblock %}
+
+{% block content %}
+  <h2>Inbox</h2>
+  <ul>
+    {% for message in messages %}
+      <li>
+        <p><strong>From:</strong> {{ message.sender }}</p>
+        <p><strong>To:</strong> {{ message.lia.service_name }}</p>
+        <p><strong>Subject:</strong> {{ message.subject }}</p>
+        <p>{{ message.body }}</p>
+      </li>
+    {% empty %}
+      <li>Your inbox is empty.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

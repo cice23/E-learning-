@@ -1,7 +1,1 @@
 Watching for file changes with StatReloader
-[27/Jul/2025 21:45:06] "GET /accounts/login/ HTTP/1.1" 200 751
-[27/Jul/2025 21:45:07] "POST /accounts/login/ HTTP/1.1" 302 0
-[27/Jul/2025 21:45:07] "GET /lias/generate/ HTTP/1.1" 200 734
-[27/Jul/2025 21:45:07] "POST /lias/generate/ HTTP/1.1" 302 0
-[27/Jul/2025 21:45:07] "GET /lias/ HTTP/1.1" 200 935
-[27/Jul/2025 21:45:07] "POST /lias/api/v1/verify-lia/ HTTP/1.1" 200 49
