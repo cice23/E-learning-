@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Generate LIA{% endblock %}
+
+{% block content %}
+  <h2>Generate a new Intelligent Link</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="service_name">Service Name:</label>
+    <input type="text" name="service_name" required>
+    <br>
+    <label for="level">Trust Level:</label>
+    <select name="level" required>
+      <option value="WEAK">Weak</option>
+      <option value="MEDIUM">Medium</option>
+      <option value="STRONG">Strong</option>
+    </select>
+    <br>
+    <button type="submit">Generate</button>
+  </form>
+{% endblock %}

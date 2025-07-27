@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Generate LIA</title>
+</head>
+<body>
+  <main>
+
+  <h2>Generate a new Intelligent Link</h2>
+  <form method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="JcAGv7Gpa6Xhx3Mom45LbuhJuZAKoMPGVFhPuqMUhUpdlgxgSXBojqnwLOMJoaEi">
+    <label for="service_name">Service Name:</label>
+    <input type="text" name="service_name" required>
+    <br>
+    <label for="level">Trust Level:</label>
+    <select name="level" required>
+      <option value="WEAK">Weak</option>
+      <option value="MEDIUM">Medium</option>
+      <option value="STRONG">Strong</option>
+    </select>
+    <br>
+    <button type="submit">Generate</button>
+  </form>
+
+  </main>
+</body>
+</html>

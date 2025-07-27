@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}My LIAs{% endblock %}
+
+{% block content %}
+  <h2>My Intelligent Links</h2>
+  <a href="{% url 'generate_lia' %}">Generate a new LIA</a>
+  <ul>
+    {% for lia in lias %}
+      <li>
+        <strong>{{ lia.service_name }}</strong> ({{ lia.get_level_display }}) - {{ lia.get_status_display }}
+        <p>Token: {{ lia.token }}</p>
+      </li>
+    {% empty %}
+      <li>No LIAs generated yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
