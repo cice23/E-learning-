@@ -8,11 +8,22 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import LiaValidationSerializer
 
+from django.contrib import messages
+
 @login_required
 def generate_lia(request):
     if request.method == 'POST':
         service_name = request.POST.get('service_name')
         level = request.POST.get('level')
+        user = request.user
+
+        if level == 'MEDIUM' and not user.selfie:
+            messages.error(request, 'Please upload a selfie to generate a Medium level link.')
+            return redirect('profile')
+
+        if level == 'STRONG' and (not user.id_card or not user.passport):
+            messages.error(request, 'Please upload an ID card and passport to generate a Strong level link.')
+            return redirect('profile')
 
         expires_at = timezone.now() + timedelta(days=1)
 

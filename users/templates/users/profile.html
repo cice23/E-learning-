@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+  <h2>My Profile</h2>
+
+  <h3>Basic Information</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    <button type="submit">Update Information</button>
+  </form>
+
+  <hr>
+
+  <h3>Identity Documents</h3>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ doc_form.as_p }}
+    <button type="submit">Upload Documents</button>
+  </form>
+{% endblock %}

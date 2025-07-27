@@ -6,6 +6,13 @@
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">Log Out</a></p>
+
+  <h3>Analyze a URL in Sandbox Mode</h3>
+  <form action="{% url 'sandbox_view' %}" method="get">
+    <input type="url" name="url" placeholder="https://example.com" required>
+    <button type="submit">Analyze</button>
+  </form>
+
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">Log In</a> |
